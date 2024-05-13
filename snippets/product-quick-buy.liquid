@@ -67,30 +67,32 @@
         
 
         <button
-        type="submit"
-        style="margin-top: 1.5rem;"
-        id="buy-button-linked"
-        class="button w-full"
-        form="product-form-{{ product.id }}-{{ section.id }}"
-       
-        
-      >
-        {{ 'product.general.add_to_cart_button' | t }}
-      </button>
+  type="submit"
+  style="margin-top: 1.5rem;"
+  id="buy-button-linked"
+  class="button w-full"
+  form="product-form-{{ product.id }}-{{ section.id }}"
+  onmouseover="logProductId(this)"
+>
+  {{ 'product.general.add_to_cart_button' | t }}
+</button>
+
+<script>
+  function logProductId(button) {
+    // Extract the form ID from the button's 'form' attribute
+    var formId = button.getAttribute('form');
+    // Assuming the form ID format is 'product-form-PRODUCTID-SECTIONID'
+    var productId = formId.split('-')[2]; // This gets the PRODUCTID based on your provided ID structure
+    console.log('Product ID:', productId);
+  }
+</script>
 
       <a href="{{ product.url }}" class="quick-buy-modal__view-more link sm-max:hidden">{{ 'product.general.view_details' | t }}</a>
     </div>
 
 
   </div>
-  <script> document.addEventListener('DOMContentLoaded', function() {
-    var element = document.querySelector('.variant-picker_option-values');
-    if (element) {
-        element.addEventListener('click', function() {
-            console.log('clicked');
-        });
-    }
-});</script>
+ 
 
   <style>
     .button w-full {
