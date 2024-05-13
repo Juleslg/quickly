@@ -72,9 +72,8 @@
         id="buy-button-linked"
         class="button w-full"
         form="product-form-{{ product.id }}-{{ section.id }}"
-        {% if product.selected_or_first_available_variant.available == false %}
-        console.log('sold out')
-        {% endif %}
+       
+        
       >
         {{ 'product.general.add_to_cart_button' | t }}
       </button>
@@ -84,7 +83,14 @@
 
 
   </div>
-
+  <script> document.addEventListener('DOMContentLoaded', function() {
+    var element = document.querySelector('.variant-picker_option-values');
+    if (element) {
+        element.addEventListener('click', function() {
+            console.log('clicked');
+        });
+    }
+});</script>
 
   <style>
     .button w-full {
