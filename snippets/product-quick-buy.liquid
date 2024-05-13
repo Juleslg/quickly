@@ -72,6 +72,7 @@
   id="buy-button-linked"
   class="button w-full"
   form="product-form-{{ product.id }}-{{ section.id }}"
+  variant="{{ product.selected_or_first_available_variant.id }}"
   onmouseover="logProductId(this)"
 >
   {{ 'product.general.add_to_cart_button' | t }}
@@ -83,7 +84,9 @@
     var formId = button.getAttribute('form');
     // Assuming the form ID format is 'product-form-PRODUCTID-SECTIONID'
     var productId = formId.split('-')[2]; // This gets the PRODUCTID based on your provided ID structure
+    var variantId = button.getAttribute('variant');
     console.log('Product ID:', productId);
+    console.log('Variant ID:', variantId);
   }
 </script>
 
