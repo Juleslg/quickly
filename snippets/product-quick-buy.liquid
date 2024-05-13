@@ -64,15 +64,21 @@
         , allow_blocks: allow_blocks
         , update_url: update_url -%}
 
-      <button
+        <button
         type="submit"
         style="margin-top: 1.5rem;"
         id="buy-button-linked"
         class="button w-full"
-        form="product-form-{{ product.id }}-{{ section.id }}">
-        {{ 'product.general.add_to_cart_button' | t }}
-
-
+        form="product-form-{{ product.id }}-{{ section.id }}"
+        {% if product.selected_or_first_available_variant.available %}
+          disabled="disabled"
+        {% endif %}
+      >
+        {% if product.selected_or_first_available_variant.available %}
+          {{ 'product.general.add_to_cart_button' | t }}
+        {% else %}
+          {{ 'product.general.sold_out' | t }}
+        {% endif %}
       </button>
 
       <a href="{{ product.url }}" class="quick-buy-modal__view-more link sm-max:hidden">{{ 'product.general.view_details' | t }}</a>
