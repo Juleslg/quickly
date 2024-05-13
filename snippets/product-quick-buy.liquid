@@ -64,15 +64,17 @@
         , allow_blocks: allow_blocks
         , update_url: update_url -%}
 
-      <button
+        <button
         type="submit"
         style="margin-top: 1.5rem;"
         id="buy-button-linked"
         class="button w-full"
         form="product-form-{{ product.id }}-{{ section.id }}">
-      {{% if product.variants.first.available%}Buy now{% else %}Sold Out{% endif%}}
-
-
+        {% if product.variants.first.available %}
+          Buy now
+        {% else %}
+          Sold Out
+        {% endif %}
       </button>
 
       <a href="{{ product.url }}" class="quick-buy-modal__view-more link sm-max:hidden">{{ 'product.general.view_details' | t }}</a>
