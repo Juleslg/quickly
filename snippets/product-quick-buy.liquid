@@ -79,15 +79,38 @@
 </button>
 
 <script>
-  function logProductId(button) {
-    // Extract the form ID from the button's 'form' attribute
-    var formId = button.getAttribute('form');
-    // Assuming the form ID format is 'product-form-PRODUCTID-SECTIONID'
-    var productId = formId.split('-')[2]; // This gets the PRODUCTID based on your provided ID structure
+// Function to check variant availability
+function checkVariantAvailability(button) {
     var variantId = button.getAttribute('variant');
-    console.log(formId);
-  }
+    var url = `${Shopify.routes.root}variants/${variantId}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            if (data.available) {
+                button.textContent = '{{ "product.general.add_to_cart_button" | t }}'; // Available text
+            } else {
+                button.textContent = '{{ "product.general.sold_out" | t }}'; // Sold out text
+            }
+        })
+        .catch(error => console.error('Error fetching variant data:', error));
+}
+
+// Log Product ID on mouseover and check variant
+function logProductId(button) {
+    console.log('Product ID:', button.getAttribute('variant')); // Log the variant ID
+    checkVariantAvailability(button); // Check availability
+}
+
+// Optional: Automatically check availability when the page loads for the first time
+document.addEventListener('DOMContentLoaded', function() {
+    var button = document.getElementById('buy-button-linked');
+    if (button) {
+        checkVariantAvailability(button);
+    }
+});
 </script>
+
 
       <a href="{{ product.url }}" class="quick-buy-modal__view-more link sm-max:hidden">{{ 'product.general.view_details' | t }}</a>
     </div>
