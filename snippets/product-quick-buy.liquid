@@ -70,7 +70,7 @@
         id="buy-button-linked"
         class="button w-full"
         form="product-form-{{ product.id }}-{{ section.id }}">
-        {% if product.variants.first.available %}
+        {% if product.selected_variant %}
           Buy now
         {% else %}
           Sold Out
