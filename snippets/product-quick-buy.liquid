@@ -79,9 +79,10 @@
 </button>
 
 <div class="buy_buttons_quantity">
+{%- capture product_form_id -%}product-form-{{ product.id }}-{{ section.id }}{%- endcapture -%}
                 
                 
-            <div class="buy-buttonC">
+            <div class="buy-buttonC" form="product-form-{{ product.id }}-{{ section.id }}">
               {%- render 'buy-buttons',
               product: product,
               variant: product.selected_or_first_available_variant
