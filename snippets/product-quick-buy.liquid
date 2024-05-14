@@ -73,13 +73,12 @@
   class="buy-buttons {% if show_payment_button %}buy-buttons--has-dynamic{% endif %}" template="{{ product.template_suffix | escape }}" form="{{ form_id }}"
   form="product-form-{{ product.id }}-{{ section.id }}"
   variant="{{ product.selected_or_first_available_variant.id }}"
-  onmouseover="logProductId(this)"
+  
 >
   {{ 'product.general.add_to_cart_button' | t }}
 </button>
 
-<script>
-// Function to check variant availability
+ction to check variant availability
 
 
 
