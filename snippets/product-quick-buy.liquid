@@ -79,10 +79,10 @@
 </button>
 
 <div class="buy_buttons_quantity">
-{%- capture product_form_id -%}product-form-{{ product.id }}-{{ section.id }}{%- endcapture -%}
+
                 
                 
-            <div class="buy-buttonC" form="product-form-{{ product.id }}-{{ section.id }}">
+            <div class="buy-buttonC">
               {%- render 'buy-buttons',
               product: product,
               variant: product.selected_or_first_available_variant
@@ -107,6 +107,36 @@
 
   </div>
  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  // Get the buy button linked
+  var buyButtonLinked = document.getElementById('buy-button-linked');
+  
+  // Function to update the buy button linked text content
+  function updateBuyButtonLinkedText() {
+    // Get the text content of the buy-buttonC
+    var buyButtonC = document.querySelector('.buy-buttonC button'); // Adjust the selector if necessary
+    if (buyButtonC) {
+      buyButtonLinked.textContent = buyButtonC.textContent;
+    }
+  }
+
+  // Initial update
+  updateBuyButtonLinkedText();
+
+  // Update whenever buy-buttonC text changes (if text changes dynamically, otherwise this may not be necessary)
+  // Assuming buy-buttonC is updated dynamically, we can use MutationObserver
+  var observer = new MutationObserver(updateBuyButtonLinkedText);
+  var buyButtonCContainer = document.querySelector('.buy-buttonC');
+  if (buyButtonCContainer) {
+    observer.observe(buyButtonCContainer, { childList: true, subtree: true, characterData: true });
+  }
+});
+
+  </script>
+
+
 
   <style>
     .button w-full {
