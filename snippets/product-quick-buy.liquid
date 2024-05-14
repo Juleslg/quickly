@@ -109,16 +109,24 @@
  
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
   // Get the buy button linked
   var buyButtonLinked = document.getElementById('buy-button-linked');
   
+  if (!buyButtonLinked) {
+    console.error('Buy button linked not found');
+    return;
+  }
+
   // Function to update the buy button linked text content
   function updateBuyButtonLinkedText() {
     // Get the text content of the buy-buttonC
     var buyButtonC = document.querySelector('.buy-buttonC button'); // Adjust the selector if necessary
     if (buyButtonC) {
+      console.log('Found buy-buttonC:', buyButtonC.textContent);
       buyButtonLinked.textContent = buyButtonC.textContent;
+    } else {
+      console.error('Buy button C not found');
     }
   }
 
@@ -131,8 +139,11 @@
   var buyButtonCContainer = document.querySelector('.buy-buttonC');
   if (buyButtonCContainer) {
     observer.observe(buyButtonCContainer, { childList: true, subtree: true, characterData: true });
+  } else {
+    console.error('Buy button C container not found');
   }
 });
+
 
   </script>
 
