@@ -109,7 +109,9 @@
  
 
   <script>
-   document.addEventListener('DOMContentLoaded', function() {
+   
+
+document.addEventListener('DOMContentLoaded', function() {
   // Get the buy button linked
   var buyButtonLinked = document.getElementById('buy-button-linked');
   
@@ -121,7 +123,7 @@
   // Function to update the buy button linked text content
   function updateBuyButtonLinkedText() {
     // Get the text content of the buy-buttonC
-    var buyButtonC = document.querySelector('.buy-buttonC button'); // Adjust the selector if necessary
+    var buyButtonC = document.querySelector('.buy-buttonC button.button.w-full');
     if (buyButtonC) {
       console.log('Found buy-buttonC:', buyButtonC.textContent);
       buyButtonLinked.textContent = buyButtonC.textContent;
