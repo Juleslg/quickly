@@ -70,7 +70,7 @@
   type="submit"
   style="margin-top: 1.5rem;"
   id="buy-button-linked"
-  class="buy-buttons {% if show_payment_button %}buy-buttons--has-dynamic{% endif %}" template="{{ product.template_suffix | escape }}" form="{{ form_id }}"
+  class="buy-buttons"
   form="product-form-{{ product.id }}-{{ section.id }}"
   variant="{{ product.selected_or_first_available_variant.id }}"
   
