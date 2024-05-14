@@ -78,9 +78,7 @@
   {{ 'product.general.add_to_cart_button' | t }}
 </button>
 
-<div class="buy_buttons_quantity" style="display: none;">
-
-                
+<div class="buy_buttons_quantity" >              
                 
             <div class="buy-buttonC">
               {%- render 'buy-buttons',
@@ -147,7 +145,7 @@
     return;
   }
 
-  // Function to update the buy button linked text content
+  // DIRTY FIX TO GET PROPER TEXT FOR ADD TO CART BUTTON
   function updateBuyButtonLinkedText() {
     // Get the text content of the buy-buttonC
     var buyButtonC = document.querySelector('.buy-buttonC button.button.w-full');
