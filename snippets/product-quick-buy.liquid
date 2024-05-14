@@ -79,11 +79,12 @@
 </button>
 
 <div class="buy_buttons_quantity">
-                {% render 'quantity-selector', variant: product.selected_or_first_available_variant, form: product_form_id %}
+                
                 
             <div class="buy-buttonC">
               {%- render 'buy-buttons',
               product: product,
+              variant: product.selected_or_first_available_variant
               form_id: product_form_id,
               show_payment_button: block.settings.show_payment_button,
               show_gift_card_recipient: block.settings.show_gift_card_recipient,
