@@ -100,12 +100,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Get the button inside the buy-buttons component
     var buyButtonsButton = document.querySelector('.buy-buttons .button.w-full');
+    console.log('buyButtonsButton:', buyButtonsButton);
+
     // Get the button with the ID buy-button-linked
     var buyButtonLinked = document.getElementById('buy-button-linked');
+    console.log('buyButtonLinked:', buyButtonLinked);
 
     // Set the text content of buy-button-linked to match the buy-buttons button
     if (buyButtonsButton && buyButtonLinked) {
       buyButtonLinked.textContent = buyButtonsButton.textContent;
+      console.log('Text content set:', buyButtonLinked.textContent);
+    } else {
+      console.log('One or both buttons not found');
     }
   });
 
