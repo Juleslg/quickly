@@ -144,26 +144,32 @@
       
       
     
-      document.addEventListener('DOMContentLoaded', function() {
+      
+  document.addEventListener('DOMContentLoaded', function() {
     const textGeneratorButton = document.getElementById('textGenerator');
     const buyButtonLinked = document.getElementById('buy-button-linked');
 
-    // Create a MutationObserver to watch for changes in the textGenerator button
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.type === 'childList') {
-          // Get the updated text from the textGenerator button
-          const newText = textGeneratorButton.textContent.trim();
-          // Update the text of the buy-button-linked button
-          buyButtonLinked.textContent = newText;
-        }
+    if (textGeneratorButton && buyButtonLinked) {
+      // Create a MutationObserver to watch for changes in the textGenerator button
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'childList') {
+            // Get the updated text from the textGenerator button
+            const newText = textGeneratorButton.textContent.trim();
+            // Update the text of the buy-button-linked button
+            buyButtonLinked.textContent = newText;
+          }
+        });
       });
-    });
 
-    // Configure the observer to watch for changes in the textGenerator button's child nodes
-    const config = { childList: true, subtree: true };
-    observer.observe(textGeneratorButton, config);
+      // Configure the observer to watch for changes in the textGenerator button's child nodes
+      const config = { childList: true, subtree: true };
+      observer.observe(textGeneratorButton, config);
+    } else {
+      console.error('One or both of the buttons were not found in the DOM.');
+    }
   });
+</script>
   // DIRTY FIX TO GET PROPER TEXT FOR ADD TO CART BUTTON
   
     });
