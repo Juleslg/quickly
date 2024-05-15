@@ -123,56 +123,6 @@
       // Remove 'is-disabled' in case it was added previously
       targetElement.classList.remove('is-disabled');
     }
- 
-
-    function updateButtonText() {
-        // Get the text content of the "Add to cart" button
-        const addToCartButton = document.querySelector('button[type="submit"].button.w-full');
-        const addToCartText = addToCartButton ? addToCartButton.textContent : '';
-
-        // Get the second button with id "buy-button-linked"
-        const linkedButton = document.querySelector('#buy-button-linked');
-
-        // Log the text content being set
-        console.log('Add to Cart Text:', addToCartText);
-
-        // Update the second button's text content
-        if (linkedButton && addToCartText) {
-            linkedButton.textContent = addToCartText;
-            // Log the update action
-            console.log('Updated linked button text to:', addToCartText);
-        }
-    }
-
-    // Get the "Add to cart" button
-    const addToCartButton = document.querySelector('button[type="submit"].button.w-full');
-
-    if (addToCartButton) {
-        // Log that the add to cart button was found
-        console.log('Add to Cart button found:', addToCartButton);
-
-        // Create a MutationObserver to monitor changes in the "Add to cart" button
-        const observer = new MutationObserver((mutationsList, observer) => {
-            for (const mutation of mutationsList) {
-                if (mutation.type === 'childList' || mutation.type === 'subtree') {
-                    // Log the detected mutation
-                    console.log('Mutation detected:', mutation);
-                    updateButtonText();
-                }
-            }
-        });
-
-        // Start observing the "Add to cart" button for changes in its child nodes
-        observer.observe(addToCartButton, { childList: true, subtree: true });
-
-        // Initial call to set the text initially
-        updateButtonText();
-    } else {
-        // Log if the add to cart button was not found
-        console.log('Add to Cart button not found.');
-    }
-
-    
   });
 
   
