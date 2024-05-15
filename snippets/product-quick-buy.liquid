@@ -50,6 +50,11 @@
           , context: 'card' %}
 
 
+      </div>
+      <div style="display: none;">
+        
+      </div>
+    </div>
 
     <div class="quick-buy-modal__info-wrapper">
       {%- assign allow_blocks = '@app,vendor,title,price,payment_terms,separator,variant_picker,product_variations,line_item_property,buy_buttons' | split: ',' -%}
@@ -72,7 +77,7 @@
   {{ 'product.general.add_to_cart_button' | t }}
 </button>
 
-<div class="buy_buttons_quantity" >              
+<div class="buy_buttons_quantity" style="display: none;">              
                 
             <div class="buy-buttonC">
               {%- render 'buy-buttons',
