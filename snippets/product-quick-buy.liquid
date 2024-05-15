@@ -143,26 +143,11 @@
     }
   });
 
-  function updateLinkedButtonText() {
-    const textGeneratorButton = document.querySelector('#textGenerator .button');
-    const linkedButton = document.getElementById('buy-button-linked');
-    if (textGeneratorButton && linkedButton) {
-      linkedButton.textContent = textGeneratorButton.textContent;
-    }
-  }
-
-  // Run the update function on initial load
-  document.addEventListener('DOMContentLoaded', updateLinkedButtonText);
-
-  // Create a MutationObserver to listen for changes in the textGenerator button
-  const observer = new MutationObserver(updateLinkedButtonText);
-  const targetNode = document.getElementById('textGenerator');
-
-  // Configuration of the observer:
-  const config = { childList: true, subtree: true };
-
-  // Start observing the target node for configured mutations
-  observer.observe(targetNode, config);
+  document.getElementById('textGenerator').addEventListener('click', function(event) {
+    document.getElementById('buy-button-linked').click();
+    event.preventDefault();
+});
+  
 </script>
 
 </template>
