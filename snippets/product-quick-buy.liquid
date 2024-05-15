@@ -69,15 +69,10 @@
         
 
         <button
-  
-  style="margin-top: 1.5rem;"
-  
-  id="buy-button-linked"
-  class="button w-full"
-  
-  
->
-  {{ 'product.general.add_to_cart_button' | t }}
+        style="margin-top: 1.5rem;"
+        id="buy-button-linked"
+        class="button w-full">
+
 </button>
 
 
@@ -101,6 +96,21 @@
   </style>
 
 <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the button inside the buy-buttons component
+    var buyButtonsButton = document.querySelector('.buy-buttons .button.w-full');
+    // Get the button with the ID buy-button-linked
+    var buyButtonLinked = document.getElementById('buy-button-linked');
+
+    // Set the text content of buy-button-linked to match the buy-buttons button
+    if (buyButtonsButton && buyButtonLinked) {
+      buyButtonLinked.textContent = buyButtonsButton.textContent;
+    }
+  });
+
+
+
   document.addEventListener('click', function(event) {
     // Check if the clicked element or any of its parents have the 'block-swatch' class
     let targetElement = event.target;
