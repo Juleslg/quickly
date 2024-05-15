@@ -25,7 +25,9 @@
     <button
       type="button"
       class="quick-buy-modal__close-button sm-max:hidden"
-      is="dialog-close-button">
+      is="dialog-close-button"
+      id="dialog-close-button">
+      
       <span class="sr-only">{{ 'general.accessibility.close' | t }}</span>
       {%- render 'icon' with 'close' -%}
     </button>
@@ -172,6 +174,26 @@
     console.error('Buy button C container not found');
   }
     });
+
+    var closeButton = document.getElementById('dialog-close-button');
+
+  closeButton.addEventListener('click', function() {
+    // Log statement
+    console.log('Close button clicked');
+
+    // Remove event listeners if needed
+    // Assuming you have a reference to the event listeners
+    // closeButton.removeEventListener('click', handlerFunction);
+
+    // If you need to remove all event listeners, you might replace the button with a clone of itself
+    var newButton = closeButton.cloneNode(true);
+    closeButton.parentNode.replaceChild(newButton, closeButton);
+
+    // Optionally, you can add new event listeners to the new button
+    newButton.addEventListener('click', function() {
+      console.log('New close button clicked');
+    });
+  });
   </script>
 
 </template>
