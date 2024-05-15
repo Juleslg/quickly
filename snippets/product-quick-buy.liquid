@@ -114,69 +114,56 @@
     }
   </style>
 
-  <script>
-      document.addEventListener('click', function(event) {
-      // Check if the clicked element or any of its parents have the 'block-swatch' class
-      let targetElement = event.target;
-      while (targetElement && !targetElement.classList.contains('block-swatch')) {
-    targetElement = targetElement.parentElement;
-      }
+<script>
+  document.addEventListener('click', function(event) {
+    // Check if the clicked element or any of its parents have the 'block-swatch' class
+    let targetElement = event.target;
+    while (targetElement && !targetElement.classList.contains('block-swatch')) {
+      targetElement = targetElement.parentElement;
+    }
 
-      // If a 'block-swatch' element was clicked
-      if (targetElement && targetElement.classList.contains('block-swatch')) {
-    // Remove 'is-selected' from all 'block-swatch' elements
-    document.querySelectorAll('.block-swatch.is-selected').forEach(function(el) {
-      el.classList.remove('is-selected');
-    });
-
-    // Add 'is-disabled' to all 'block-swatch' elements except the clicked one
-    document.querySelectorAll('.block-swatch').forEach(function(el) {
-      if (el !== targetElement) {
-        el.classList.add('is-disabled');
-      }
-    });
-
-    // Add 'is-selected' to the clicked 'block-swatch' element
-    targetElement.classList.add('is-selected');
-    // Remove 'is-disabled' in case it was added previously
-    targetElement.classList.remove('is-disabled');
-      }
-      
-      
-    
-      
-  
-    const textGeneratorButton = document.getElementById('textGenerator');
-    const buyButtonLinked = document.getElementById('buy-button-linked');
-
-    if (textGeneratorButton && buyButtonLinked) {
-      // Create a MutationObserver to watch for changes in the textGenerator button
-      const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          if (mutation.type === 'childList') {
-            // Get the updated text from the textGenerator button
-            const newText = textGeneratorButton.textContent.trim();
-            // Update the text of the buy-button-linked button
-            buyButtonLinked.textContent = newText;
-          }
-        });
+    // If a 'block-swatch' element was clicked
+    if (targetElement && targetElement.classList.contains('block-swatch')) {
+      // Remove 'is-selected' from all 'block-swatch' elements
+      document.querySelectorAll('.block-swatch.is-selected').forEach(function(el) {
+        el.classList.remove('is-selected');
       });
 
-      // Configure the observer to watch for changes in the textGenerator button's child nodes
-      const config = { childList: true, subtree: true };
-      observer.observe(textGeneratorButton, config);
-    } else {
-      console.error('One or both of the buttons were not found in the DOM.');
+      // Add 'is-disabled' to all 'block-swatch' elements except the clicked one
+      document.querySelectorAll('.block-swatch').forEach(function(el) {
+        if (el !== targetElement) {
+          el.classList.add('is-disabled');
+        }
+      });
+
+      // Add 'is-selected' to the clicked 'block-swatch' element
+      targetElement.classList.add('is-selected');
+      // Remove 'is-disabled' in case it was added previously
+      targetElement.classList.remove('is-disabled');
     }
   });
 
-  // DIRTY FIX TO GET PROPER TEXT FOR ADD TO CART BUTTON
-  
-    
+  function updateLinkedButtonText() {
+    const textGeneratorButton = document.querySelector('#textGenerator .button');
+    const linkedButton = document.getElementById('buy-button-linked');
+    if (textGeneratorButton && linkedButton) {
+      linkedButton.textContent = textGeneratorButton.textContent;
+    }
+  }
 
-    
-    
-  </script>
+  // Run the update function on initial load
+  document.addEventListener('DOMContentLoaded', updateLinkedButtonText);
+
+  // Create a MutationObserver to listen for changes in the textGenerator button
+  const observer = new MutationObserver(updateLinkedButtonText);
+  const targetNode = document.getElementById('textGenerator');
+
+  // Configuration of the observer:
+  const config = { childList: true, subtree: true };
+
+  // Start observing the target node for configured mutations
+  observer.observe(targetNode, config);
+</script>
 
 </template>
 
