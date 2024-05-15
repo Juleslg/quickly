@@ -50,12 +50,6 @@
           , context: 'card' %}
 
 
-      </div>
-      <div style="display: none;">
-        {%- render 'buy-buttons' form_id: product_form_id
-        -%}
-      </div>
-    </div>
 
     <div class="quick-buy-modal__info-wrapper">
       {%- assign allow_blocks = '@app,vendor,title,price,payment_terms,separator,variant_picker,product_variations,line_item_property,buy_buttons' | split: ',' -%}
@@ -140,6 +134,7 @@
       }
       
       
+      function initializeBuyButtonLinked() {
   var buyButtonLinked = document.getElementById('buy-button-linked');
   
   if (!buyButtonLinked) {
@@ -171,7 +166,16 @@
   } else {
     console.error('Buy button C container not found');
   }
-    });
+}
+
+// Call the function to initialize
+initializeBuyButtonLinked();
+
+// Re-initialize each time the modal is shown
+document.getElementById('your-modal-id').addEventListener('shown.bs.modal', function () {
+  initializeBuyButtonLinked();
+});
+
   </script>
 
 </template>
