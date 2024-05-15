@@ -82,7 +82,8 @@
 
 <div class="buy_buttons_quantity" style="display: none;">              
                 
-            <div class="buy-buttonC">
+            <div class="buy-buttonC"
+            id="textGenerator">
               {%- render 'buy-buttons',
               product: product,
               variant: product.selected_or_first_available_variant
@@ -150,12 +151,19 @@
   }
 
   // DIRTY FIX TO GET PROPER TEXT FOR ADD TO CART BUTTON
+  });
+  document.addEventListener('DOMContentLoaded', function() {
   function updateBuyButtonLinkedText() {
-    // Get the text content of the buy-buttonC
-    var buyButtonC = document.querySelector('.buy-buttonC button.button.w-full');
+    // Get the text content of the buy-buttonC within the element with ID 'textGenerator'
+    var buyButtonC = document.querySelector('#textGenerator button.button.w-full');
     if (buyButtonC) {
       console.log('Found buy-buttonC:', buyButtonC.textContent);
-      buyButtonLinked.textContent = buyButtonC.textContent;
+      var buyButtonLinked = document.getElementById('buy-button-linked');
+      if (buyButtonLinked) {
+        buyButtonLinked.textContent = buyButtonC.textContent;
+      } else {
+        console.error('Buy button linked not found');
+      }
     } else {
       console.error('Buy button C not found');
     }
@@ -167,33 +175,14 @@
   // Update whenever buy-buttonC text changes (if text changes dynamically, otherwise this may not be necessary)
   // Assuming buy-buttonC is updated dynamically, we can use MutationObserver
   var observer = new MutationObserver(updateBuyButtonLinkedText);
-  var buyButtonCContainer = document.querySelector('.buy-buttonC');
+  var buyButtonCContainer = document.getElementById('textGenerator');
   if (buyButtonCContainer) {
     observer.observe(buyButtonCContainer, { childList: true, subtree: true, characterData: true });
   } else {
     console.error('Buy button C container not found');
   }
-    });
-
-    var closeButton = document.getElementById('dialog-close-button');
-
-  closeButton.addEventListener('click', function() {
-    // Log statement
-    console.log('Close button clicked');
-
-    // Remove event listeners if needed
-    // Assuming you have a reference to the event listeners
-    // closeButton.removeEventListener('click', handlerFunction);
-
-    // If you need to remove all event listeners, you might replace the button with a clone of itself
-    var newButton = closeButton.cloneNode(true);
-    closeButton.parentNode.replaceChild(newButton, closeButton);
-
-    // Optionally, you can add new event listeners to the new button
-    newButton.addEventListener('click', function() {
-      console.log('New close button clicked');
-    });
-  });
+});
+    
   </script>
 
 </template>
