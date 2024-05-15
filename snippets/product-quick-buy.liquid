@@ -78,30 +78,7 @@
   {{ 'product.general.add_to_cart_button' | t }}
 </button>
 
-<div class="buy_buttons_quantity" style="margin-top: 1.5rem;>              
-                
-            <div class="buy-buttonC"
-            id="textGenerator">
-              {%- render 'buy-buttons',
-              product: product,
-              variant: product.selected_or_first_available_variant
-              form_id: product_form_id,
-              show_payment_button: block.settings.show_payment_button,
-              show_gift_card_recipient: block.settings.show_gift_card_recipient,
-              atc_button_background: block.settings.atc_button_background,
-              atc_button_text_color: block.settings.atc_button_text_color,
-              payment_button_background: block.settings.payment_button_background,
-              payment_button_text_color: block.settings.payment_button_text_color
-              -%}
-            </div>
-              </div>
 
- 
-
-
-
-      <a href="{{ product.url }}" class="quick-buy-modal__view-more link sm-max:hidden">{{ 'product.general.view_details' | t }}</a>
-    </div>
 
 
   </div>
