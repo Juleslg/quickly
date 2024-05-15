@@ -53,7 +53,10 @@
 
 
       </div>
-      
+      <div>
+        {%- render 'buy-buttons' form_id: product_form_id
+        -%}
+      </div>
     </div>
 
     <div class="quick-buy-modal__info-wrapper">
@@ -78,10 +81,7 @@
   {{ 'product.general.add_to_cart_button' | t }}
 </button>
 
-<div>
-        {%- render 'buy-buttons' form_id: product_form_id
-        -%}
-      </div>
+
 
 
 
