@@ -165,6 +165,42 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // Remove 'is-disabled' in case it was added previously
       targetElement.classList.remove('is-disabled');
     }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+    // Function to update the second button's text
+    function updateButtonText() {
+        // Get the text content of the "Add to cart" button
+        const addToCartButton = document.querySelector('button[type="submit"].button.w-full');
+        const addToCartText = addToCartButton ? addToCartButton.textContent : '';
+
+        // Get the second button with id "buy-button-linked"
+        const linkedButton = document.querySelector('#buy-button-linked');
+
+        // Update the second button's text content
+        if (linkedButton && addToCartText) {
+            linkedButton.textContent = addToCartText;
+        }
+    }
+
+    // Get the "Add to cart" button
+    const addToCartButton = document.querySelector('button[type="submit"].button.w-full');
+
+    if (addToCartButton) {
+        // Create a MutationObserver to monitor changes in the "Add to cart" button
+        const observer = new MutationObserver((mutationsList, observer) => {
+            for (const mutation of mutationsList) {
+                if (mutation.type === 'childList' || mutation.type === 'subtree') {
+                    updateButtonText();
+                }
+            }
+        });
+
+        // Start observing the "Add to cart" button for changes in its child nodes
+        observer.observe(addToCartButton, { childList: true, subtree: true });
+
+        // Initial call to set the text initially
+        updateButtonText();
+    }
   });
 
   
