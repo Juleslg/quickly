@@ -47,12 +47,9 @@ Supported variables
       </div>
   
       <div class="quick-buy-modal__info-wrapper">
-        {%- assign allow_blocks = '@app,vendor,title,price,payment_terms,separator,variant_picker,product_variations,line_item_property,buy_buttons' | split: ',' -%}
-        {%- render 'product-info', product: product, allow_blocks: allow_blocks,-%}
-        <button type="submit" class="button w-full" form="{{ product_form_id }}">
-          {{ 'product.general.add_to_cart_button' | t }}
-        </button>
-    
+        {%- assign allow_blocks = '@app,vendor,title,price,payment_terms,separator,variant_picker,product_variations,line_item_property,buy_buttons,buy_buttons_quantity' | split: ',' -%}
+        {%- render 'product-info', product: product, allow_blocks: allow_blocks, update_url: false -%}
+        
           
         <a href="{{ product.url }}" class="quick-buy-modal__view-more link sm-max:hidden">{{ 'product.general.view_details' | t }}</a>
       </div>
