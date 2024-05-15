@@ -66,40 +66,14 @@
         , allow_blocks: allow_blocks
         , update_url: update_url -%}
 
-        
-
-        <button
-  type="submit"
-  style="margin-top: 1.5rem;"
-  
-  id="buy-button-linked"
-  class="button w-full"
-  form="product-form-{{ product.id }}-{{ section.id }}"
-  variant="{{ product.selected_or_first_available_variant.id }}"
-  
->
-  {{ 'product.general.add_to_cart_button' | t }}
-</button>
-
-
-
-
-
- 
-
-
-
+    
       <a href="{{ product.url }}" class="quick-buy-modal__view-more link sm-max:hidden">{{ 'product.general.view_details' | t }}</a>
     </div>
 
 
   </div>
 
-  <style>
-    .button w-full {
-      margin-top: 1.5rem;
-    }
-  </style>
+
 
 <script>
   document.addEventListener('click', function(event) {
