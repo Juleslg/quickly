@@ -143,44 +143,32 @@
       }
       
       
-    var buyButtonLinked = document.getElementById('buy-button-linked');
-  
-  if (!buyButtonLinked) {
-    console.error('Buy button linked not found');
-    return;
-  }
+    
 
   // DIRTY FIX TO GET PROPER TEXT FOR ADD TO CART BUTTON
-  function updateBuyButtonLinkedText() {
-    // Get the text content of the buy-buttonC within the element with ID 'textGenerator'
-    var buyButtonC = document.querySelector('#textGenerator button.button.w-full');
-    if (buyButtonC) {
-      console.log('Found buy-buttonC:', buyButtonC.textContent);
-      var buyButtonLinked = document.getElementById('buy-button-linked');
-      if (buyButtonLinked) {
-        buyButtonLinked.textContent = buyButtonC.textContent;
-      } else {
-        console.error('Buy button linked not found');
-      }
-    } else {
-      console.error('Buy button C not found');
-    }
-  }
-
-  // Initial update
-  updateBuyButtonLinkedText();
-
-  // Update whenever buy-buttonC text changes (if text changes dynamically, otherwise this may not be necessary)
-  // Assuming buy-buttonC is updated dynamically, we can use MutationObserver
-  var observer = new MutationObserver(updateBuyButtonLinkedText);
-  var buyButtonCContainer = document.getElementById('textGenerator');
-  if (buyButtonCContainer) {
-    observer.observe(buyButtonCContainer, { childList: true, subtree: true, characterData: true });
-  } else {
-    console.error('Buy button C container not found');
-  }
+  
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+    const textGeneratorButton = document.getElementById('textGenerator');
+    const buyButtonLinked = document.getElementById('buy-button-linked');
+
+    // Create a MutationObserver to watch for changes in the textGenerator button
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList') {
+          // Get the updated text from the textGenerator button
+          const newText = textGeneratorButton.textContent.trim();
+          // Update the text of the buy-button-linked button
+          buyButtonLinked.textContent = newText;
+        }
+      });
+    });
+
+    // Configure the observer to watch for changes in the textGenerator button's child nodes
+    const config = { childList: true, subtree: true };
+    observer.observe(textGeneratorButton, config);
+  });
     
   </script>
 
