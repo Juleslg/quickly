@@ -57,64 +57,48 @@ Supported variables
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const blockSwatches = document.querySelectorAll(".block-swatch");
-        const colorSwatches = document.querySelectorAll(".color-swatch-a");
-        const colorNamePlaceholder = document.getElementById("color-name-placeholder");
-  
-        function removeAllSelected() {
-          blockSwatches.forEach((swatch) => {
-            swatch.classList.remove("is-selected");
-          });
-        }
-  
-        blockSwatches.forEach((swatch) => {
-          swatch.addEventListener("click", function (event) {
-            removeAllSelected();
-            this.classList.add("is-selected");
-  
-            // Debugging line
-            console.log("Block Swatch clicked: ", this);
-          });
-  
-          // Prevent clicks on links within block swatches from bubbling up
-          const link = swatch.querySelector("a");
-          if (link) {
-            link.addEventListener("click", function (event) {
-              event.stopPropagation();
+        document.addEventListener("DOMContentLoaded", function () {
+            const blockSwatches = document.querySelectorAll(".block-swatch");
+            const colorSwatches = document.querySelectorAll(".color-swatch-a");
+            const colorNamePlaceholder = document.getElementById("color-name-placeholder");
+
+            function removeAllSelected() {
+                blockSwatches.forEach((swatch) => {
+                    swatch.classList.remove("is-selected");
+                });
+            }
+
+            blockSwatches.forEach((swatch) => {
+                swatch.addEventListener("click", function (event) {
+                    removeAllSelected();
+                    this.classList.add("is-selected");
+
+                    // Debugging line
+                    console.log("Block Swatch clicked: ", this);
+                });
+
+                // Prevent clicks on links within block swatches from bubbling up
+                const link = swatch.querySelector("a");
+                if (link) {
+                    link.addEventListener("click", function (event) {
+                        event.stopPropagation();
+                    });
+                }
             });
-          }
+
+            colorSwatches.forEach((swatch) => {
+                swatch.addEventListener("click", function () {
+                    colorSwatches.forEach((s) => s.classList.remove("selected"));
+                    this.classList.add("selected");
+                    const colorName = this.getAttribute("data-color-name");
+                    colorNamePlaceholder.textContent = `${colorName} test`;
+
+                    // Debugging line
+                    console.log("Color Swatch clicked: ", this);
+                });
+            });
         });
-  
-        colorSwatches.forEach((swatch) => {
-          swatch.addEventListener("click", function () {
-            colorSwatches.forEach((s) => s.classList.remove("selected"));
-            this.classList.add("selected");
-            const colorName = this.getAttribute("data-color-name");
-            colorNamePlaceholder.textContent = `${colorName} test`;
-  
-            // Debugging line
-            console.log("Color Swatch clicked: ", this);
-          });
-        });
-      });
-
-    document.addEventListener('DOMContentLoaded', function() {
-    // Select all swatches
-    const swatches = document.querySelectorAll('.block-swatch');
-
-    // Add click event listener to each swatch
-    swatches.forEach(swatch => {
-        swatch.addEventListener('click', function() {
-            // Remove 'is-selected' class from all swatches
-            swatches.forEach(s => s.classList.remove('is-selected'));
-
-            // Add 'is-selected' class to the clicked swatch
-            swatch.classList.add('is-selected');
-        });
-    });
-});
-
+    </script>
   
     </script>
 
