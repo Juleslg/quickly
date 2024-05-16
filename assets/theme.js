@@ -2892,7 +2892,7 @@ _onVariantAdded = new WeakSet();
 onVariantAdded_fn = function(event) {
   const bannerElement = document.createRange().createContextualFragment(`
       <div class="banner banner--success" role="alert">
-        ${window.themeVariables.strings.addedToCart}
+        
       </div>
     `).firstElementChild;
   this.prepend(bannerElement);
