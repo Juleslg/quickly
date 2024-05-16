@@ -55,6 +55,7 @@ Supported variables
       </div>
           
     </div>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const blockSwatches = document.querySelectorAll(".block-swatch");
@@ -97,6 +98,23 @@ Supported variables
           });
         });
       });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select all swatches
+    const swatches = document.querySelectorAll('.block-swatch');
+
+    // Add click event listener to each swatch
+    swatches.forEach(swatch => {
+        swatch.addEventListener('click', function() {
+            // Remove 'is-selected' class from all swatches
+            swatches.forEach(s => s.classList.remove('is-selected'));
+
+            // Add 'is-selected' class to the clicked swatch
+            swatch.classList.add('is-selected');
+        });
+    });
+});
+
   
     </script>
 
