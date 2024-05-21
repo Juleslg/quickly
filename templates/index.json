@@ -55,34 +55,6 @@
         "controls_color": "#ffffff"
       }
     },
-    "featured_collections_BMyrzm": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_grx9Gj": {
-          "type": "collection",
-          "settings": {
-            "collection": "aberta",
-            "products_count": 2,
-            "title": "",
-            "link_url": "",
-            "link_text": "View all"
-          }
-        }
-      },
-      "block_order": [
-        "collection_grx9Gj"
-      ],
-      "settings": {
-        "separate_section_with_border": true,
-        "hide_product_information": false,
-        "stack_products": false,
-        "products_per_row_mobile": "2",
-        "products_per_row_desktop": 4,
-        "horizontal_spacing_factor": 1,
-        "vertical_spacing_factor": 1,
-        "subheading": "Featured collection"
-      }
-    },
     "18b98b8f-e4b1-46fb-9d00-051693765ff8": {
       "type": "collection-list",
       "blocks": {
@@ -534,7 +506,6 @@
   },
   "order": [
     "slideshow",
-    "featured_collections_BMyrzm",
     "18b98b8f-e4b1-46fb-9d00-051693765ff8",
     "31e54c15-9859-4992-a081-b05d4f8bca2f",
     "testimonials2_0_xAMyc7",
