@@ -11,11 +11,6 @@
         --product-list-items-per-row: {{ section.settings.products_per_row_desktop }};
       }
     }
-
-    .first-product-card {
-      transform: scale(1.1); /* Makes the first product card 10% larger */
-      z-index: 1; /* Keeps the scaled element on top if it overlaps */
-    }
   </style>
 
   <div class="section-spacing {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
@@ -52,7 +47,7 @@
                 {%- endif -%}
 
                 {%- for product in block.settings.collection.products limit: block.settings.products_count -%}
-                  {%- render 'product-card', product: product, reveal: should_reveal, hide_product_information: section.settings.hide_product_information, block: block, extra_classes: forloop.first | append: ' first-product-card' -%}
+                  {%- render 'product-card', product: product, reveal: should_reveal, hide_product_information: section.settings.hide_product_information, block: block -%}
                 {%- else -%}
                   {%- for i in (1..block.settings.products_count) -%}
                     {%- render 'product-card-placeholder', reveal: should_reveal, loop_index: forloop.index0, hide_product_information: section.settings.hide_product_information -%}
@@ -241,6 +236,4 @@
     }
   ]
 }
-{% endschema %}
-{% endschema %}
 {% endschema %}
