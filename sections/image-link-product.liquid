@@ -100,407 +100,274 @@
 
 
 {% schema %}
-{
-    "name": "t:sections.image_link_product.name",
-    "class": "shopify-section--image-with-text-overlay",
-    "tag": "section",
-    "max_blocks": 10,
-    "disabled_on": {
-      "groups": ["header", "custom.overlay"]
-    },
-    "settings": [
-        
-      {
-        "type": "select",
-        "id": "image_size",
-        "label": "t:global.image.size",
-        "options": [
-          {
-            "value": "auto",
-            "label": "t:global.sizes.original_image_ratio"
-          },
-          {
-            "value": "xs",
-            "label": "t:global.sizes.x_small"
-          },
-          {
-            "value": "sm",
-            "label": "t:global.sizes.small"
-          },
-          {
-            "value": "md",
-            "label": "t:global.sizes.medium"
-          },
-          {
-            "value": "lg",
-            "label": "t:global.sizes.large"
-          },
-          {
-            "value": "fill",
-            "label": "t:global.sizes.fit_screen"
-          }
-        ],
-        "info": "t:global.image.ratio_avoid_cropping_info",
-        "default": "auto"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "t:global.image.image",
-        "info": "t:sections.image_with_text_overlay.image_size_recommendation"
-      },
-      {
-        "type": "image_picker",
-        "id": "mobile_image",
-        "label": "t:global.image.mobile_image",
-        "info": "t:sections.image_with_text_overlay.mobile_image_size_recommendation"
-      },
-      {
-        "type": "checkbox",
-        "id": "allow_transparent_header",
-        "label": "t:global.section.allow_transparent_header",
-        "info": "t:global.section.allow_transparent_header_info",
-        "default": false
-      },
-      {
-        "type": "checkbox",
-        "id": "reveal_on_scroll",
-        "label": "t:global.animation.reveal_image_on_scroll",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "remove_vertical_spacing",
-        "label": "t:global.spacing.remove_vertical_spacing",
-        "default": true
-      },
-      {
-        "type": "select",
-        "id": "content_width",
-        "label": "t:global.sizes.content_width",
-        "options": [
-          {
-            "value": "xs",
-            "label": "t:global.sizes.x_small"
-          },
-          {
-            "value": "sm",
-            "label": "t:global.sizes.small"
-          },
-          {
-            "value": "md",
-            "label": "t:global.sizes.medium"
-          },
-          {
-            "value": "lg",
-            "label": "t:global.sizes.large"
-          },
-          {
-            "value": "xl",
-            "label": "t:global.sizes.x_large"
-          }
-        ],
-        "default": "md"
-      },
-      {
-        "type": "select",
-        "id": "mobile_text_position",
-        "label": "t:global.position.mobile_content_position",
-        "options": [
-          {
-            "value": "place-self-start text-start",
-            "label": "t:global.position.top_left"
-          },
-          {
-            "value": "place-self-start-center text-center",
-            "label": "t:global.position.top_center"
-          },
-          {
-            "value": "place-self-start-end text-end",
-            "label": "t:global.position.top_right"
-          },
-          {
-            "value": "place-self-center-start text-start",
-            "label": "t:global.position.middle_left"
-          },
-          {
-            "value": "place-self-center text-center",
-            "label": "t:global.position.middle_center"
-          },
-          {
-            "value": "place-self-center-end text-end",
-            "label": "t:global.position.middle_right"
-          },
-          {
-            "value": "place-self-end-start text-start",
-            "label": "t:global.position.bottom_left"
-          },
-          {
-            "value": "place-self-end-center text-center",
-            "label": "t:global.position.bottom_center"
-          },
-          {
-            "value": "place-self-end text-end",
-            "label": "t:global.position.bottom_right"
-          }
-        ],
-        "default": "place-self-center text-center"
-      },
-      {
-        "type": "select",
-        "id": "desktop_text_position",
-        "label": "t:global.position.desktop_content_position",
-        "options": [
-          {
-            "value": "sm:place-self-start sm:text-start",
-            "label": "t:global.position.top_left"
-          },
-          {
-            "value": "sm:place-self-start-center sm:text-center",
-            "label": "t:global.position.top_center"
-          },
-          {
-            "value": "sm:place-self-start-end sm:text-end",
-            "label": "t:global.position.top_right"
-          },
-          {
-            "value": "sm:place-self-center-start sm:text-start",
-            "label": "t:global.position.middle_left"
-          },
-          {
-            "value": "sm:place-self-center sm:text-center",
-            "label": "t:global.position.middle_center"
-          },
-          {
-            "value": "sm:place-self-center-end sm:text-end",
-            "label": "t:global.position.middle_right"
-          },
-          {
-            "value": "sm:place-self-end-start sm:text-start",
-            "label": "t:global.position.bottom_left"
-          },
-          {
-            "value": "sm:place-self-end-center sm:text-center",
-            "label": "t:global.position.bottom_center"
-          },
-          {
-            "value": "sm:place-self-end sm:text-end",
-            "label": "t:global.position.bottom_right"
-          }
-        ],
-        "default": "sm:place-self-center sm:text-center"
-      },
-      {
-        "type": "header",
-        "content": "t:global.colors.category"
-      },
-      {
-        "type": "color",
-        "id": "text_color",
-        "label": "t:global.text.text",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "overlay_color",
-        "label": "t:global.colors.overlay_color",
-        "default": "#000000"
-      },
-      {
-        "type": "range",
-        "id": "overlay_opacity",
-        "label": "t:global.colors.overlay_opacity",
-        "min": 0,
-        "max": 100,
-        "step": 1,
-        "unit": "%",
-        "default": 30
-      }
-    ],
-    "blocks": [
-      {
-        "type": "subheading",
-        "name": "t:sections.image_with_text_overlay.blocks.subheading.name",
+    {
+        "name": "Image with Text Overlay",
+        "class": "shopify-section--image-with-text-overlay",
+        "tag": "section",
+        "max_blocks": 10,
+        "disabled_on": {
+          "groups": ["header", "custom.overlay"]
+        },
         "settings": [
           {
-            "type": "inline_richtext",
-            "id": "text",
-            "label": "t:global.text.text",
-            "default": "Subheading"
-          }
-        ]
-      },
-      {
-        "type": "heading",
-        "name": "t:sections.image_with_text_overlay.blocks.heading.name",
-        "settings": [
+            "type": "select",
+            "id": "image_size",
+            "label": "Image Size",
+            "options": [
+              {"value": "auto", "label": "Original Image Ratio"},
+              {"value": "xs", "label": "Extra Small"},
+              {"value": "sm", "label": "Small"},
+              {"value": "md", "label": "Medium"},
+              {"value": "lg", "label": "Large"},
+              {"value": "fill", "label": "Fit to Screen"}
+            ],
+            "default": "auto"
+          },
           {
-            "type": "inline_richtext",
-            "id": "text",
-            "label": "t:global.text.text",
-            "default": "Heading"
+            "type": "image_picker",
+            "id": "image",
+            "label": "Desktop Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile Image"
+          },
+          {
+            "type": "checkbox",
+            "id": "allow_transparent_header",
+            "label": "Allow Transparent Header",
+            "default": false
+          },
+          {
+            "type": "checkbox",
+            "id": "reveal_on_scroll",
+            "label": "Reveal on Scroll",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "remove_vertical_spacing",
+            "label": "Remove Vertical Spacing",
+            "default": true
           },
           {
             "type": "select",
-            "id": "heading_tag",
-            "label": "t:global.text.style",
+            "id": "content_width",
+            "label": "Content Width",
             "options": [
-              {
-                "value": "h1",
-                "label": "H1"
-              },
-              {
-                "value": "h2",
-                "label": "H2"
-              },
-              {
-                "value": "h3",
-                "label": "H3"
-              },
-              {
-                "value": "h4",
-                "label": "H4"
-              },
-              {
-                "value": "h5",
-                "label": "H5"
-              },
-              {
-                "value": "h6",
-                "label": "H6"
-              }
+              {"value": "xs", "label": "Extra Small"},
+              {"value": "sm", "label": "Small"},
+              {"value": "md", "label": "Medium"},
+              {"value": "lg", "label": "Large"},
+              {"value": "xl", "label": "Extra Large"}
             ],
-            "default": "h4"
-          }
-        ]
-      },
-      {
-        "type": "richtext",
-        "name": "t:sections.image_with_text_overlay.blocks.paragraph.name",
-        "settings": [
-          {
-            "type": "richtext",
-            "id": "content",
-            "label": "t:global.text.content",
-            "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        ]
-      },
-      {
-        "type": "liquid",
-        "name": "t:sections.image_with_text_overlay.blocks.liquid.name",
-        "settings": [
-          {
-            "type": "liquid",
-            "id": "liquid",
-            "label": "t:global.code.liquid",
-            "default": "<p>Use this text to output some custom Liquid code to include widget or dynamic code.</p>"
-          }
-        ]
-      },
-      {
-        "type": "button",
-        "name": "t:sections.image_with_text_overlay.blocks.button.name",
-        "settings": [
-          {	
-            "type": "select",	
-            "id": "style",	
-            "label": "t:global.text.style",
-            "options": [	
-              {	
-                "value": "outline",	
-                "label": "t:global.text.button_style_options.outline"
-              },	
-              {	
-                "value": "solid",
-                "label": "t:global.text.button_style_options.solid"
-              }	
-            ],	
-            "default": "solid"
-          },
-          {	
-            "type": "text",	
-            "id": "text",	
-            "label": "t:global.text.text",
-            "default": "Button text"	
-          },	
-          {	
-            "type": "url",	
-            "id": "url",	
-            "label": "t:global.text.link"
-          },	
-          {	
-            "type": "color",	
-            "id": "background",	
-            "label": "t:global.colors.background"
-          },	
-          {	
-            "type": "color",	
-            "id": "text_color",	
-            "label": "t:global.colors.text"
-          }	
-        ]	
-      },
-      {
-        "type": "link",
-        "name": "t:sections.image_with_text_overlay.blocks.link.name",
-        "settings": [
-          {
-            "type": "text",
-            "id": "text",
-            "label": "t:global.text.text",
-            "default": "Link text"
+            "default": "md"
           },
           {
-            "type": "url",
-            "id": "url",
-            "label": "t:global.text.link"
-          }
-        ]
-      },
-      
-      
-      {
-        "type": "hotspot",
-        "name": "Hotspot",
-        "settings": [
-           
+            "type": "select",
+            "id": "mobile_text_position",
+            "label": "Mobile Text Position",
+            "options": [
+              {"value": "top-left", "label": "Top Left"},
+              {"value": "top-center", "label": "Top Center"},
+              {"value": "top-right", "label": "Top Right"},
+              {"value": "middle-left", "label": "Middle Left"},
+              {"value": "middle-center", "label": "Middle Center"},
+              {"value": "middle-right", "label": "Middle Right"},
+              {"value": "bottom-left", "label": "Bottom Left"},
+              {"value": "bottom-center", "label": "Bottom Center"},
+              {"value": "bottom-right", "label": "Bottom Right"}
+            ],
+            "default": "middle-center"
+          },
           {
-    "type": "number",
-    "id": "x_axis",
-    "label": "X Axis",
-    "default": 50  
-  },
-  {
-    "type": "number",
-    "id": "y_axis",
-    "label": "Y Axis",
-    "default": 50 
-  }
-        ]
-      }
-      
-    ],
-    "presets": [
-      {
-        "name": "t:sections.image_with_text_overlay.presets.image_with_text_overlay.name",
+            "type": "select",
+            "id": "desktop_text_position",
+            "label": "Desktop Text Position",
+            "options": [
+              {"value": "top-left", "label": "Top Left"},
+              {"value": "top-center", "label": "Top Center"},
+              {"value": "top-right", "label": "Top Right"},
+              {"value": "middle-left", "label": "Middle Left"},
+              {"value": "middle-center", "label": "Middle Center"},
+              {"value": "middle-right", "label": "Middle Right"},
+              {"value": "bottom-left", "label": "Bottom Left"},
+              {"value": "bottom-center", "label": "Bottom Center"},
+              {"value": "bottom-right", "label": "Bottom Right"}
+            ],
+            "default": "middle-center"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "overlay_color",
+            "label": "Overlay Color",
+            "default": "#000000"
+          },
+          {
+            "type": "range",
+            "id": "overlay_opacity",
+            "label": "Overlay Opacity",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "default": 30
+          }
+        ],
         "blocks": [
           {
+            "type": "subheading",
+            "name": "Subheading",
+            "settings": [
+              {
+                "type": "inline_richtext",
+                "id": "text",
+                "label": "Text",
+                "default": "Subheading"
+              }
+            ]
+          },
+          {
             "type": "heading",
-            "settings": {
-              "text": "Image with text overlay"
-            }
+            "name": "Heading",
+            "settings": [
+              {
+                "type": "inline_richtext",
+                "id": "text",
+                "label": "Text",
+                "default": "Heading"
+              },
+              {
+                "type": "select",
+                "id": "heading_tag",
+                "label": "Heading Tag",
+                "options": [
+                  {"value": "h1", "label": "H1"},
+                  {"value": "h2", "label": "H2"},
+                  {"value": "h3", "label": "H3"},
+                  {"value": "h4", "label": "H4"},
+                  {"value": "h5", "label": "H5"},
+                  {"value": "h6", "label": "H6"}
+                ],
+                "default": "h4"
+              }
+            ]
           },
           {
             "type": "richtext",
+            "name": "Rich Text",
+            "settings": [
+              {
+                "type": "richtext",
+                "id": "content",
+                "label": "Content",
+                "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+              }
+            ]
+          },
+          {
+            "type": "liquid",
+            "name": "Custom Liquid",
+            "settings": [
+              {
+                "type": "liquid",
+                "id": "liquid",
+                "label": "Liquid Code",
+                "default": "<p>Use this text to output some custom Liquid code to include widget or dynamic code.</p>"
+              }
+            ]
+          },
+          {
+            "type": "button",
+            "name": "Button",
+            "settings": [
+              {
+                "type": "select",
+                "id": "style",
+                "label": "Style",
+                "options": [
+                  {"value": "outline", "label": "Outline"},
+                  {"value": "solid", "label": "Solid"}
+                ],
+                "default": "solid"
+              },
+              {
+                "type": "text",
+                "id": "text",
+                "label": "Button Text",
+                "default": "Button text"
+              },
+              {
+                "type": "url",
+                "id": "url",
+                "label": "URL",
+                "default": ""
+              },
+              {
+                "type": "color",
+                "id": "background",
+                "label": "Background Color"
+              },
+              {
+                "type": "color",
+                "id": "text_color",
+                "label": "Text Color"
+              }
+            ]
+          },
+          {
+            "type": "link",
+            "name": "Link",
+            "settings": [
+              {
+                "type": "text",
+                "id": "text",
+                "label": "Link Text",
+                "default": "Link text"
+              },
+              {
+                "type": "url",
+                "id": "url",
+                "label": "URL",
+                "default": ""
+              }
+            ]
+          }
+        ],
+        "presets": [
+          {
+            "name": "Default",
+            "category": "Image with Text Overlay",
             "settings": {
-              "content": "<p>Add your own custom content to give more information about your store, availability details...</p>"
-            }
+              "image_size": "auto",
+              "text_color": "#ffffff",
+              "overlay_color": "#000000",
+              "overlay_opacity": 30
+            },
+            "blocks": [
+              {
+                "type": "heading",
+                "settings": {
+                  "text": "Image with Text Overlay"
+                }
+              },
+              {
+                "type": "richtext",
+                "settings": {
+                  "content": "<p>Add your own custom content to give more information about your store, availability details...</p>"
+                }
+              }
+            ]
           }
         ]
-      }
-    ]
-  }
-
-  {% endschema %}
+    }
+    {% endschema %}
+    
   
