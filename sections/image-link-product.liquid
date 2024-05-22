@@ -79,6 +79,7 @@
     cursor: pointer;
     transform: translate(calc(var(--hotspot-x) * 1%), calc(var(--hotspot-y) * 1%));
   }
+
   .hotspot:hover .hotspot-content {
     display: block;
   }
@@ -467,25 +468,25 @@
             "default": "Product Name"
           },
           {
-            "type": "range",
-            "id": "x_axis",
-            "label": "X Axis",
-            "min": 0,
-            "max": 500,
-            "step": 1,
-            "unit": "%",
-            "default": 50
-          },
-          {
-            "type": "range",
-            "id": "y_axis",
-            "label": "Y Axis",
-            "min": 0,
-            "max": 500,
-            "step": 1,
-            "unit": "%",
-            "default": 50
-          }
+  "type": "range",
+  "id": "x_axis",
+  "label": "X Axis",
+  "min": 0,
+  "max": 500,
+  "step": 1,
+  "unit": "%",
+  "default": 50
+},
+{
+  "type": "range",
+  "id": "y_axis",
+  "label": "Y Axis",
+  "min": 0,
+  "max": 500,
+  "step": 1,
+  "unit": "%",
+  "default": 50
+}
         ]
       }
     ],
