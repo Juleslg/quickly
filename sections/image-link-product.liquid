@@ -74,10 +74,15 @@
   }
   .hotspot {
     position: absolute;
-    font-size: 24px;
+    font-size: 44px;
     color: black;
     cursor: pointer;
-    transform: translate(calc(var(--hotspot-x) * 1%), calc(var(--hotspot-y) * 1%));
+    left: calc(var(--hotspot-x) * 1%);
+    top: calc(var(--hotspot-y) * 1%);
+  }
+
+  image-with-text-overlay {
+    position: relative;
   }
 
   .hotspot:hover .hotspot-content {
@@ -472,7 +477,7 @@
   "id": "x_axis",
   "label": "X Axis",
   "min": 0,
-  "max": 500,
+  "max": 100,
   "step": 1,
   "unit": "%",
   "default": 50
@@ -482,7 +487,7 @@
   "id": "y_axis",
   "label": "Y Axis",
   "min": 0,
-  "max": 500,
+  "max": 100,
   "step": 1,
   "unit": "%",
   "default": 50
