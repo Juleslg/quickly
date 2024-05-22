@@ -52,10 +52,9 @@
                     </div>
                   {% endif %}
                 {% when 'hotspot' %}
-                  <div class="hotspot" style="left: {{ block.settings.x_axis }}%; top: {{ block.settings.y_axis }}%;">
-                    +
-                    <div class="hotspot-content">{{ block.settings.product_name }}</div>
-                  </div>
+                    <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};">
+                        +
+                        <div class="hotspot-content">{{ block.settings.product_name }}</div>
               {% endcase %}
             {% endfor %}
           </div>
@@ -78,7 +77,7 @@
     font-size: 24px;
     color: black;
     cursor: pointer;
-    transform: translate(-50%, -50%); /* Center the hotspot on the coordinates */
+    transform: translate(calc(var(--hotspot-x) * 1%), calc(var(--hotspot-y) * 1%));
   }
   .hotspot:hover .hotspot-content {
     display: block;
