@@ -30,7 +30,6 @@
                     <p class="{{ block.settings.heading_tag }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
                   {% endif %}
                 {% when 'richtext' %}
-                    {%- render 'product-info', product: section.settings.product, update_url: false -%}
                   {% if block.settings.content != blank %}
                     <div {{ block.shopify_attributes }}>
                       {{ block.settings.content }}
@@ -71,7 +70,10 @@
     </image-with-text-overlay>
   </div>
   
-  
+  <script> 
+  console.log('{{ section.settings.product.handle }}')
+  console.log("hi")
+  </script>
 
   <style>
   #shopify-section-{{ section.id }} {
@@ -120,7 +122,7 @@
         {
       "type": "product",
       "id": "product",
-      "label": "product"
+      "label": "hotspot_product"
     },
         
       {
