@@ -30,6 +30,7 @@
                     <p class="{{ block.settings.heading_tag }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
                   {% endif %}
                 {% when 'richtext' %}
+                    {%- render 'product-info', product: section.settings.product, update_url: false -%}
                   {% if block.settings.content != blank %}
                     <div {{ block.shopify_attributes }}>
                       {{ block.settings.content }}
@@ -55,7 +56,11 @@
                     <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};">
                         +
                         <div class="hotspot-content">
-                            {%- render 'product-info', product: section.settings.product, center_basic_info: section.settings.center_basic_info, update_url: false -%}
+      {% if section.settings.product != blank %}
+        {{ section.settings.product.handle }}
+      {% else %}
+        No product selected
+      {% endif %}
     </div>
     </div>
               {% endcase %}
