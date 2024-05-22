@@ -55,37 +55,37 @@
         "controls_color": "#ffffff"
       }
     },
-    "image_link_product_DGmXnf": {
+    "image_link_product_3cxUUC": {
       "type": "image-link-product",
       "blocks": {
-        "heading_3p4FCy": {
+        "heading_NGxMnN": {
           "type": "heading",
           "settings": {
             "text": "Image with text overlay",
             "heading_tag": "h4"
           }
         },
-        "richtext_6EtkYA": {
+        "richtext_J9zKhL": {
           "type": "richtext",
           "settings": {
             "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
           }
         },
-        "hotspot_HNAz8y": {
+        "hotspot_7zddg3": {
           "type": "hotspot",
           "settings": {
-            "product_name": "Product Name",
-            "x_axis": 42,
-            "y_axis": 52
+            "x_axis": 50,
+            "y_axis": 50
           }
         }
       },
       "block_order": [
-        "heading_3p4FCy",
-        "richtext_6EtkYA",
-        "hotspot_HNAz8y"
+        "heading_NGxMnN",
+        "richtext_J9zKhL",
+        "hotspot_7zddg3"
       ],
       "settings": {
+        "product": "becher-pura-setup",
         "image_size": "auto",
         "allow_transparent_header": false,
         "reveal_on_scroll": true,
@@ -549,7 +549,7 @@
   },
   "order": [
     "slideshow",
-    "image_link_product_DGmXnf",
+    "image_link_product_3cxUUC",
     "18b98b8f-e4b1-46fb-9d00-051693765ff8",
     "31e54c15-9859-4992-a081-b05d4f8bca2f",
     "testimonials2_0_xAMyc7",
