@@ -72,12 +72,13 @@
     {% endif %}
     --content-over-media-content-max-width: var(--container-{{ section.settings.content_width }}-max-width);
   }
+  <style>
   .hotspot {
     position: absolute;
     font-size: 44px;
     color: black;
     cursor: pointer;
-    transform: translate(calc((var(--hotspot-x) - 50) * 1%), calc((var(--hotspot-y) - 50) * 1%));
+    transform: translate(calc((var(--hotspot-x) - 500) / 10), calc((var(--hotspot-y) - 500) / 10));
   }
 
   .hotspot:hover .hotspot-content {
