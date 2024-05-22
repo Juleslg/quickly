@@ -54,7 +54,7 @@
                 {% when 'hotspot' %}
                     <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};">
                         +
-                        <div class="hotspot-content">{{ block.settings.product_name }}</div>
+                        <div class="hotspot-content">{{ block.settings.product.title }}</div>
               {% endcase %}
             {% endfor %}
           </div>
@@ -109,6 +109,11 @@
       "groups": ["header", "custom.overlay"]
     },
     "settings": [
+        {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      },
       {
         "type": "select",
         "id": "image_size",
@@ -457,16 +462,13 @@
           }
         ]
       },
+      
+      
       {
         "type": "hotspot",
         "name": "Hotspot",
         "settings": [
-          {
-            "type": "text",
-            "id": "product_name",
-            "label": "Product Name",
-            "default": "Product Name"
-          },
+           
           {
     "type": "number",
     "id": "x_axis",
@@ -481,6 +483,7 @@
   }
         ]
       }
+      
     ],
     "presets": [
       {
