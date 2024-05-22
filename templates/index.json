@@ -55,6 +55,59 @@
         "controls_color": "#ffffff"
       }
     },
+    "shop_the_look_JEHc7V": {
+      "type": "shop-the-look",
+      "blocks": {
+        "look_LmB7Hg": {
+          "type": "look",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2024-04-07_Onomao5352_1.jpg",
+            "hot_spots_background": "#ffffff",
+            "product_1": "badezimmer-set-graublau-3-teilig",
+            "product_1_horizontal_position": 26,
+            "product_1_vertical_position": 35,
+            "product_2": "",
+            "product_2_horizontal_position": 34,
+            "product_2_vertical_position": 65,
+            "product_3": "badezimmer-set-traditionell-sand-3-teilig",
+            "product_3_horizontal_position": 66,
+            "product_3_vertical_position": 42,
+            "product_4": "badezimmer-set-turkis-dipped-3-teilig",
+            "product_4_horizontal_position": 85,
+            "product_4_vertical_position": 85
+          }
+        },
+        "look_CtjtYU": {
+          "type": "look",
+          "settings": {
+            "hot_spots_background": "#ffffff",
+            "product_1": "",
+            "product_1_horizontal_position": 30,
+            "product_1_vertical_position": 35,
+            "product_2": "",
+            "product_2_horizontal_position": 70,
+            "product_2_vertical_position": 30,
+            "product_3": "",
+            "product_3_horizontal_position": 60,
+            "product_3_vertical_position": 65,
+            "product_4": "",
+            "product_4_horizontal_position": 85,
+            "product_4_vertical_position": 85
+          }
+        }
+      },
+      "block_order": [
+        "look_LmB7Hg",
+        "look_CtjtYU"
+      ],
+      "settings": {
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "Shop the look",
+        "content": "",
+        "popover_title": "Shop the look"
+      }
+    },
     "image_link_product_3cxUUC": {
       "type": "image-link-product",
       "blocks": {
@@ -549,6 +602,7 @@
   },
   "order": [
     "slideshow",
+    "shop_the_look_JEHc7V",
     "image_link_product_3cxUUC",
     "18b98b8f-e4b1-46fb-9d00-051693765ff8",
     "31e54c15-9859-4992-a081-b05d4f8bca2f",
