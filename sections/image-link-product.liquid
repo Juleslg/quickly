@@ -56,7 +56,7 @@
                         +
                         <div class="hotspot-content">
       {% if section.settings.product != blank %}
-        {{ section.settings.product.handle }}
+        {{ section.settings.product.title }}
       {% else %}
         No product selected
       {% endif %}
@@ -71,8 +71,10 @@
   </div>
   
   <script> 
-  console.log('{{ section.settings.product.handle }}')
-  console.log("hi")
+
+   console.log('{{ section.settings.product | json }}');
+   
+  console.log("hiya")
   </script>
 
   <style>
