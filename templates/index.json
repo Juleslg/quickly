@@ -85,7 +85,7 @@
         "hotspot_7zddg3"
       ],
       "settings": {
-        "product": "becher-pura-setup",
+        "hotspot_product": "becher-pura-old",
         "image_size": "auto",
         "allow_transparent_header": false,
         "reveal_on_scroll": true,
