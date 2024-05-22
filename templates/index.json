@@ -58,17 +58,17 @@
     "image_link_product_ELJzmG": {
       "type": "image-link-product",
       "blocks": {
-        "hotspot_xH4cLG": {
+        "hotspot_pDpGLF": {
           "type": "hotspot",
           "settings": {
             "product_name": "Product Name",
-            "x_axis": 92,
-            "y_axis": 9
+            "x_axis": 17,
+            "y_axis": 80
           }
         }
       },
       "block_order": [
-        "hotspot_xH4cLG"
+        "hotspot_pDpGLF"
       ],
       "settings": {
         "image_size": "auto",
