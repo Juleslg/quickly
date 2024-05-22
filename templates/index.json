@@ -62,8 +62,8 @@
           "type": "hotspot",
           "settings": {
             "product_name": "Becher",
-            "x_axis": 0,
-            "y_axis": 17
+            "x_axis": 56,
+            "y_axis": 61
           }
         }
       },
