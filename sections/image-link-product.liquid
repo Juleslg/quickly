@@ -57,7 +57,10 @@
                         <div class="hotspot-content">
       {% if block.settings.product != blank %}
         {{ block.settings.product.title }}
+      {% else %}
+        No product selected
       {% endif %}
+    </div>
     </div>
               {% endcase %}
             {% endfor %}
