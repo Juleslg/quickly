@@ -54,7 +54,11 @@
                 {% when 'hotspot' %}
                     <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};">
                         +
-                        <div class="hotspot-content">{{ block.settings.product.title }}</div>
+                        <div class="hotspot-content">
+      {% if block.settings.product != blank %}
+        {{ block.settings.product.title }}
+      {% endif %}
+    </div>
               {% endcase %}
             {% endfor %}
           </div>
