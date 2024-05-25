@@ -147,8 +147,8 @@ document.addEventListener('DOMContentLoaded', function() {
   .text-span {
   position: absolute;
   cursor: pointer;
-  left: calc(var(--text-span-x));
-  top: calc(var(--text-span-y));
+  left: {{ block.settings.x_axis_text }}px;
+  top: {{ block.settings.y_axis_text }}px;
   
 }
 
