@@ -59,11 +59,7 @@
                     <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};" data-hotspot-text="{{ block.settings.text }}">
                       <span class="hotspot-number">{{ forloop.index }}</span>
                       <div class="hotspot-content">
-                        {% if section.settings.product != blank %}
-                          {{ section.settings.product.title }}
-                        {% else %}
-                          No product selected
-                        {% endif %}
+                        
                       </div>
                     </div>
                   {% when 'text_span' %}
