@@ -70,9 +70,9 @@
         "hotspot_qCiKkK": {
           "type": "hotspot",
           "settings": {
-            "text": "Hotspot Text",
+            "text": "Yolo 2",
             "url": "",
-            "x_axis": 50,
+            "x_axis": 400,
             "y_axis": 50
           }
         },
