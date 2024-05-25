@@ -56,7 +56,7 @@
                     </div>
                   {% endif %}
                   {% when 'hotspot' %}
-                    <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};" data-hotspot-text="{{ block.settings.text }}">
+                    <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};" data-hotspot-text="{{ block.settings.text }}" data-hotspot-url="{{ block.settings.url }}">
                       <span class="hotspot-number">{{ forloop.index }}</span>
                       <div class="hotspot-content">
                         
@@ -75,25 +75,27 @@
   </div>
   
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var hotspots = document.querySelectorAll('.hotspot');
-    var textSpanContent = document.querySelector('.text-span-content');
+document.addEventListener('DOMContentLoaded', function() {
+  var hotspots = document.querySelectorAll('.hotspot');
+  var textSpanContent = document.querySelector('.text-span-content');
 
-    hotspots.forEach(function(hotspot) {
-      hotspot.addEventListener('mouseenter', function() {
-        var hotspotText = this.getAttribute('data-hotspot-text');
-        textSpanContent.textContent = hotspotText;
+  hotspots.forEach(function(hotspot) {
+    hotspot.addEventListener('mouseenter', function() {
+      var hotspotText = this.getAttribute('data-hotspot-text');
+      var hotspotUrl = this.getAttribute('data-hotspot-url');
+      textSpanContent.textContent = hotspotText;
+      textSpanContent.setAttribute('href', hotspotUrl);
 
-        // Remove 'active' class from all hotspots
-        hotspots.forEach(function(hotspot) {
-          hotspot.classList.remove('active');
-        });
-
-        // Add 'active' class to the current hotspot
-        this.classList.add('active');
+      // Remove 'active' class from all hotspots
+      hotspots.forEach(function(hotspot) {
+        hotspot.classList.remove('active');
       });
+
+      // Add 'active' class to the current hotspot
+      this.classList.add('active');
     });
   });
+});
 </script>
 
 <style>
@@ -529,6 +531,11 @@
       "id": "text",
       "label": "Hotspot Text",
       "default": "Hotspot Text"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Link"
     },
           {
     "type": "number",
