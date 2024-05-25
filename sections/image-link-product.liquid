@@ -1,3 +1,7 @@
+{% assign productTitle = section.settings.product.title %}
+
+
+
 <div class="{% unless section.settings.remove_vertical_spacing %}section-spacing{% endunless %}" {% if section.settings.allow_transparent_header %}allow-transparent-header{% endif %}>
     <image-with-text-overlay class="content-over-media content-over-media--{{ section.settings.image_size }}" reveal-on-scroll="{{ section.settings.reveal_on_scroll }}">
       {% if section.settings.image != blank %}
@@ -71,8 +75,9 @@
   </div>
   
   <script> 
-
-   console.log('{{ section.settings.product.title | json }}');
+  
+   console.log('{{ section.settings.product | json }}');
+   console.log('{{ productTitle }}');
    
   console.log("hiya")
   </script>
