@@ -89,8 +89,8 @@
           "type": "text_span",
           "settings": {
             "text": "Text Span",
-            "text_span_left": 90,
-            "text_span_top": 190
+            "text_span_left": 100,
+            "text_span_top": 200
           }
         }
       },
