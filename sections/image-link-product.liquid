@@ -59,7 +59,7 @@
                     </div>
                   </div>
                   {% when 'text_span' %}
-                    <div class="text-span">
+                    <div class="text-span" style="left: {{ block.settings.text_span_left }}px; top: {{ block.settings.text_span_top }}px;">
                       <a class="text-span-content" href="{{ block.settings.url }}">{{ block.settings.text }}</a>
                     </div>
             {% endcase %}
