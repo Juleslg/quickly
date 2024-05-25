@@ -78,8 +78,7 @@
     </image-with-text-overlay>
   </div>
   
-  <script> 
-  
+  <script>
   document.addEventListener('DOMContentLoaded', function() {
     var hotspots = document.querySelectorAll('.hotspot');
     var textSpanContent = document.querySelector('.text-span-content');
@@ -88,14 +87,18 @@
       hotspot.addEventListener('mouseenter', function() {
         var hotspotText = this.getAttribute('data-hotspot-text');
         textSpanContent.textContent = hotspotText;
-      });
 
-      hotspot.addEventListener('mouseleave', function() {
-        textSpanContent.textContent = '';
+        // Remove 'active' class from all hotspots
+        hotspots.forEach(function(hotspot) {
+          hotspot.classList.remove('active');
+        });
+
+        // Add 'active' class to the current hotspot
+        this.classList.add('active');
       });
     });
   });
-  </script>
+</script>
 
 <style>
   .hotspot {
@@ -106,8 +109,8 @@
 
   .hotspot-number {
     position: relative;
-    color: #ffffff; /* White text color */
-    font-size: 14px; /* Font size */
+    color: #ffffff;
+    font-size: 14px;
     font-weight: 100;
   }
 
@@ -116,22 +119,18 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 40px; /* Circle width */
-    height: 40px; /* Circle height */
-    border: 1px solid #ffffff; /* White border */
-    border-radius: 50%; /* Circle shape */
-    background-color: transparent; /* Transparent background */
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    background-color: transparent;
     transform: translate(-50%, -50%);
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease; /* Smooth transition */
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
-  .hotspot:hover .hotspot-number::before {
-    opacity: 1; /* Show circle on hover */
-  }
-
-  .hotspot:hover .hotspot-content {
-    display: block;
+  .hotspot.active .hotspot-number::before {
+    opacity: 1;
   }
 
   .hotspot-content {
@@ -153,8 +152,8 @@
   }
 
   .text-span-content {
-    color: #ffffff; /* White text color */
-    font-size: 14px; /* Font size */
+    color: #ffffff;
+    font-size: 14px;
     font-weight: 100;
     padding: 5px;
     border-radius: 3px;
