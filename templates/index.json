@@ -58,20 +58,14 @@
     "image_link_product_3cxUUC": {
       "type": "image-link-product",
       "blocks": {
-        "heading_NGxMnN": {
-          "type": "heading",
-          "settings": {
-            "text": "Image with text overlay",
-            "heading_tag": "h4"
-          }
-        },
-        "richtext_J9zKhL": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Add your own custom content to give more information about your store, availability details...<\/p>"
-          }
-        },
         "hotspot_7zddg3": {
+          "type": "hotspot",
+          "settings": {
+            "x_axis": 90,
+            "y_axis": 24
+          }
+        },
+        "hotspot_LzKw7x": {
           "type": "hotspot",
           "settings": {
             "x_axis": 50,
@@ -80,13 +74,13 @@
         }
       },
       "block_order": [
-        "heading_NGxMnN",
-        "richtext_J9zKhL",
-        "hotspot_7zddg3"
+        "hotspot_7zddg3",
+        "hotspot_LzKw7x"
       ],
       "settings": {
         "product": "becher-pura-setup",
         "image_size": "auto",
+        "image": "shopify:\/\/shop_images\/2024-04-07_Onomao5352_1.jpg",
         "allow_transparent_header": false,
         "reveal_on_scroll": true,
         "remove_vertical_spacing": true,
@@ -95,7 +89,7 @@
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
-        "overlay_opacity": 30
+        "overlay_opacity": 0
       }
     },
     "18b98b8f-e4b1-46fb-9d00-051693765ff8": {
