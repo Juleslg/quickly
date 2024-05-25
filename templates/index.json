@@ -71,11 +71,20 @@
             "x_axis": 50,
             "y_axis": 50
           }
+        },
+        "text_span_rgCJaT": {
+          "type": "text_span",
+          "settings": {
+            "text": "Product product  Product product  Product product  Product product",
+            "x_axis": 40,
+            "y_axis": 220
+          }
         }
       },
       "block_order": [
         "hotspot_7zddg3",
-        "hotspot_LzKw7x"
+        "hotspot_LzKw7x",
+        "text_span_rgCJaT"
       ],
       "settings": {
         "product": "becher-pura-setup",
