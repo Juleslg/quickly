@@ -61,15 +61,17 @@
         "hotspot_7zddg3": {
           "type": "hotspot",
           "settings": {
-            "text": "Hotspot 1",
-            "x_axis": 90,
-            "y_axis": 24
+            "text": "Tiefer Teller - Pura",
+            "url": "shopify:\/\/products\/tiefer-teller-pura",
+            "x_axis": 100,
+            "y_axis": -40
           }
         },
         "hotspot_LzKw7x": {
           "type": "hotspot",
           "settings": {
             "text": "Hotspot 2",
+            "url": "",
             "x_axis": 50,
             "y_axis": 70
           }
@@ -89,7 +91,6 @@
         "text_span_rgCJaT"
       ],
       "settings": {
-        "product": "becher-pura-setup",
         "image_size": "auto",
         "image": "shopify:\/\/shop_images\/2024-04-07_Onomao5352_1.jpg",
         "allow_transparent_header": false,
