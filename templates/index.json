@@ -55,6 +55,55 @@
         "controls_color": "#ffffff"
       }
     },
+    "image_link_product_Ri9RRa": {
+      "type": "image-link-product",
+      "blocks": {
+        "hotspot_xpNFqE": {
+          "type": "hotspot",
+          "settings": {
+            "text": "Yolo",
+            "url": "",
+            "x_axis": 500,
+            "y_axis": 50
+          }
+        },
+        "hotspot_qCiKkK": {
+          "type": "hotspot",
+          "settings": {
+            "text": "Hotspot Text",
+            "url": "",
+            "x_axis": 50,
+            "y_axis": 50
+          }
+        },
+        "text_span_QPCU3X": {
+          "type": "text_span",
+          "settings": {
+            "text": "Text Span",
+            "x_axis_text": 50,
+            "y_axis_text": 50
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_xpNFqE",
+        "hotspot_qCiKkK",
+        "text_span_QPCU3X"
+      ],
+      "settings": {
+        "image_size": "auto",
+        "image": "shopify:\/\/shop_images\/2024-04-07_Onomao5300_79f2b6ba-b781-4683-81a3-5ceabf0e0cc5.jpg",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
     "image_link_product_3cxUUC": {
       "type": "image-link-product",
       "blocks": {
@@ -565,6 +614,7 @@
   },
   "order": [
     "slideshow",
+    "image_link_product_Ri9RRa",
     "image_link_product_3cxUUC",
     "18b98b8f-e4b1-46fb-9d00-051693765ff8",
     "31e54c15-9859-4992-a081-b05d4f8bca2f",
