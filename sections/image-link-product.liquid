@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var hotspotUrl = this.getAttribute('data-hotspot-url');
       textSpanContent.textContent = hotspotText;
       textSpanContent.setAttribute('href', hotspotUrl);
+      textSpanContent.parentElement.setAttribute('href', hotspotUrl); // Add this line
 
       // Remove 'active' class from all hotspots
       hotspots.forEach(function(hotspot) {
