@@ -61,6 +61,7 @@
         "hotspot_7zddg3": {
           "type": "hotspot",
           "settings": {
+            "text": "Hotspot 1",
             "x_axis": 90,
             "y_axis": 24
           }
@@ -68,6 +69,7 @@
         "hotspot_LzKw7x": {
           "type": "hotspot",
           "settings": {
+            "text": "Hotspot 2",
             "x_axis": 50,
             "y_axis": 70
           }
