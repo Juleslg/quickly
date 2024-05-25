@@ -55,17 +55,17 @@
                       <a href="{{ block.settings.url }}">{{ block.settings.text }}</a>
                     </div>
                   {% endif %}
-                {% when 'hotspot' %}
+                  {% when 'hotspot' %}
                     <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};">
-                        +
-                        <div class="hotspot-content">
-      {% if section.settings.product != blank %}
-        {{ section.settings.product.title }}
-      {% else %}
-        No product selected
-      {% endif %}
-    </div>
-    </div>
+                      <span class="hotspot-number">{{ forloop.index }}</span>
+                      <div class="hotspot-content">
+                        {% if section.settings.product != blank %}
+                          {{ section.settings.product.title }}
+                        {% else %}
+                          No product selected
+                        {% endif %}
+                      </div>
+                    </div>
               {% endcase %}
             {% endfor %}
           </div>
@@ -82,24 +82,30 @@
   console.log("hiyaa")
   </script>
 
-  <style>
-  #shopify-section-{{ section.id }} {
-    {% if section.settings.overlay_color != 'rgba(0,0,0,0)' %}
-      --content-over-media-overlay: {{ section.settings.overlay_color.rgb }} / {{ section.settings.overlay_opacity | divided_by: 100.0 }};
-    {% endif %}
-    --content-over-media-content-max-width: var(--container-{{ section.settings.content_width }}-max-width);
-  }
+<style>
   .hotspot {
     position: absolute;
-    font-size: 44px;
-    color: black;
     cursor: pointer;
     transform: translate(calc((var(--hotspot-x) - 50) * 4%), calc((var(--hotspot-y) - 50) * 4%));
+  }
+
+  .hotspot-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
   }
 
   .hotspot:hover .hotspot-content {
     display: block;
   }
+
   .hotspot-content {
     display: none;
     position: absolute;
