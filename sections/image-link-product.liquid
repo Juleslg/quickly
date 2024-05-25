@@ -62,10 +62,10 @@
                         
                       </div>
                     </div>
-                  {% when 'text_span' %}
-                    <div class="text-span" style="--text-span-x: {{ block.settings.x_axis }}; --text-span-y: {{ block.settings.y_axis }};">
-                      <span class="text-span-content"></span>
-                    </div>
+                    {% when 'text_span' %}
+                      <div class="text-span" style="--text-span-x: {{ block.settings.x_axis }}; --text-span-y: {{ block.settings.y_axis }};">
+                        <a class="text-span-content" href="{{ block.settings.url }}"></a>
+                      </div>
               {% endcase %}
             {% endfor %}
           </div>
