@@ -80,8 +80,8 @@
           "type": "text_span",
           "settings": {
             "text": "Product product  Product product  Product product  Product product",
-            "x_axis": 40,
-            "y_axis": 220
+            "x_axis": 90,
+            "y_axis": 260
           }
         }
       },
