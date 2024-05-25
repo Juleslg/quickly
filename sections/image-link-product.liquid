@@ -66,10 +66,15 @@
                         {% endif %}
                       </div>
                     </div>
-                    {% when 'text_span' %}
-                      <div class="text-span" style="--text-span-x: {{ block.settings.x_axis }}; --text-span-y: {{ block.settings.y_axis }};">
-                        <span class="text-span-content">{{ block.settings.text }}</span>
-                      </div>
+                  {% when 'text_span' %}
+                    <div class="text-span" style="--text-span-x: {{ block.settings.x_axis }}; --text-span-y: {{ block.settings.y_axis }};">
+                      <span class="text-span-content">
+                        {% assign hotspot_block = section.blocks | where: "type", "hotspot" | first %}
+                        {% if hotspot_block %}
+                          {{ hotspot_block.settings.text }}
+                        {% endif %}
+                      </span>
+                    </div>
               {% endcase %}
             {% endfor %}
           </div>
@@ -523,7 +528,12 @@
         "type": "hotspot",
         "name": "Hotspot",
         "settings": [
-           
+          {
+      "type": "text",
+      "id": "text",
+      "label": "Hotspot Text",
+      "default": "Hotspot Text"
+    },
           {
     "type": "number",
     "id": "x_axis",
