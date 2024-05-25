@@ -63,8 +63,8 @@
                       </div>
                     </div>
                     {% when 'text_span' %}
-                      <div class="text-span" style="--text-span-x: {{ block.settings.x_axis }}; --text-span-y: {{ block.settings.y_axis }};">
-                        <a class="text-span-content" href="{{ block.settings.url }}"></a>
+                      <div class="text-span" style="--text-span-x: {{ block.settings.x_axis_text }}; --text-span-y: {{ block.settings.y_axis_text }};">
+                        <a class="text-span-content" href="{{ block.settings.url }}">{{ block.settings.text }}</a>
                       </div>
               {% endcase %}
             {% endfor %}
@@ -145,10 +145,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   .text-span {
-    position: absolute;
-    cursor: pointer;
-    transform: translate(calc((var(--text-span-x) - 50) * 4%), calc((var(--text-span-y) - 50) * 4%));
-  }
+  position: absolute;
+  cursor: pointer;
+  transform: translate(calc((var(--text-span-x) - 50) * 4%), calc((var(--text-span-y) - 50) * 4%));
+}
 
   .text-span-content {
     color: #ffffff;
@@ -564,13 +564,13 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
       "type": "number",
-      "id": "x_axis",
+      "id": "x_axis_text",
       "label": "X Axis",
       "default": 50
     },
     {
       "type": "number",
-      "id": "y_axis",
+      "id": "y_axis_text",
       "label": "Y Axis",
       "default": 50
     }
