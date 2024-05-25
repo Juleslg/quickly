@@ -78,14 +78,22 @@
 document.addEventListener('DOMContentLoaded', function() {
   var hotspots = document.querySelectorAll('.hotspot');
   var textSpanContent = document.querySelector('.text-span-content');
+  var textSpan = document.querySelector('.text-span'); // Get the text span element
 
   hotspots.forEach(function(hotspot) {
     hotspot.addEventListener('mouseenter', function() {
       var hotspotText = this.getAttribute('data-hotspot-text');
       var hotspotUrl = this.getAttribute('data-hotspot-url');
+      var hotspotX = this.style.getPropertyValue('--hotspot-x'); // Get the hotspot's X position
+      var hotspotY = this.style.getPropertyValue('--hotspot-y'); // Get the hotspot's Y position
+
       textSpanContent.textContent = hotspotText;
       textSpanContent.setAttribute('href', hotspotUrl);
-      textSpanContent.parentElement.setAttribute('href', hotspotUrl); // Add this line
+      textSpan.setAttribute('href', hotspotUrl); // Ensure the link is updated
+
+      // Update the position of the text span
+      textSpan.style.setProperty('--text-span-x', hotspotX);
+      textSpan.style.setProperty('--text-span-y', hotspotY);
 
       // Remove 'active' class from all hotspots
       hotspots.forEach(function(hotspot) {
@@ -145,19 +153,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   .text-span {
-    position: absolute;
-    cursor: pointer;
-    transform: translate(calc((var(--text-span-x) - 50) * 4%), calc((var(--text-span-y) - 50) * 4%));
-  }
+  position: absolute;
+  cursor: pointer;
+  transform: translate(calc((var(--text-span-x) - 50) * 4%), calc((var(--text-span-y) - 50) * 4%));
+}
 
-  .text-span-content {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 100;
-    padding: 5px;
-    border-radius: 3px;
-    white-space: nowrap;
-  }
+.text-span-content {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 100;
+  padding: 5px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
 </style>
 
 
