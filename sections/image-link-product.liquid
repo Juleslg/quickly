@@ -90,26 +90,29 @@
   }
 
   .hotspot-number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px; /* Increase the width */
-    height: 40px; /* Increase the height */
-    border: 1px solid #ffffff; /* White border */
+    position: relative;
     color: #ffffff; /* White text color */
+    font-size: 16px; /* Font size */
+    font-weight: bold;
+  }
+
+  .hotspot-number::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px; /* Circle width */
+    height: 40px; /* Circle height */
+    border: 2px solid #ffffff; /* White border */
     border-radius: 50%; /* Circle shape */
-    font-size: 14px; /* Keep the font size the same */
-    font-weight: 100;
     background-color: transparent; /* Transparent background */
-    line-height: 40px; /* Match the height of the circle */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    transform: translate(-50%, -50%);
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease; /* Smooth transition */
   }
 
-  .hotspot:hover .hotspot-number {
-    opacity: 1; /* Show on hover */
+  .hotspot:hover .hotspot-number::before {
+    opacity: 1; /* Show circle on hover */
   }
 
   .hotspot:hover .hotspot-content {
