@@ -80,8 +80,8 @@
           "type": "text_span",
           "settings": {
             "text": "test",
-            "x_axis": 50,
-            "y_axis": 50
+            "x_axis": 100,
+            "y_axis": 100
           }
         }
       },
