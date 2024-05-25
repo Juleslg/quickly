@@ -79,7 +79,9 @@
         "text_span_yN46ec": {
           "type": "text_span",
           "settings": {
-            "text": "test"
+            "text": "",
+            "x_axis_text": 70,
+            "y_axis_text": 230
           }
         }
       },
