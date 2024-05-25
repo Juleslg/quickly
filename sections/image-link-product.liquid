@@ -56,7 +56,7 @@
                     </div>
                   {% endif %}
                   {% when 'hotspot' %}
-                    <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};">
+                    <div class="hotspot" style="--hotspot-x: {{ block.settings.x_axis }}; --hotspot-y: {{ block.settings.y_axis }};" data-hotspot-text="{{ block.settings.text }}">
                       <span class="hotspot-number">{{ forloop.index }}</span>
                       <div class="hotspot-content">
                         {% if section.settings.product != blank %}
@@ -68,12 +68,7 @@
                     </div>
                   {% when 'text_span' %}
                     <div class="text-span" style="--text-span-x: {{ block.settings.x_axis }}; --text-span-y: {{ block.settings.y_axis }};">
-                      <span class="text-span-content">
-                        {% assign hotspot_block = section.blocks | where: "type", "hotspot" | first %}
-                        {% if hotspot_block %}
-                          {{ hotspot_block.settings.text }}
-                        {% endif %}
-                      </span>
+                      <span class="text-span-content"></span>
                     </div>
               {% endcase %}
             {% endfor %}
@@ -85,10 +80,21 @@
   
   <script> 
   
-   console.log('{{ section.settings.product | json }}');
-   console.log('{{ productTitle }}');
-   
-  console.log("hiyaa")
+  document.addEventListener('DOMContentLoaded', function() {
+    var hotspots = document.querySelectorAll('.hotspot');
+    var textSpanContent = document.querySelector('.text-span-content');
+
+    hotspots.forEach(function(hotspot) {
+      hotspot.addEventListener('mouseenter', function() {
+        var hotspotText = this.getAttribute('data-hotspot-text');
+        textSpanContent.textContent = hotspotText;
+      });
+
+      hotspot.addEventListener('mouseleave', function() {
+        textSpanContent.textContent = '';
+      });
+    });
+  });
   </script>
 
 <style>
