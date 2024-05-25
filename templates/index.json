@@ -76,15 +76,6 @@
             "y_axis": 70
           }
         },
-        "hotspot_4URyYF": {
-          "type": "hotspot",
-          "settings": {
-            "text": "Kleiner Teller - Pura",
-            "url": "shopify:\/\/products\/kleiner-teller-pura",
-            "x_axis": 900,
-            "y_axis": 70
-          }
-        },
         "text_span_yN46ec": {
           "type": "text_span",
           "settings": {
@@ -97,7 +88,6 @@
       "block_order": [
         "hotspot_7zddg3",
         "hotspot_LzKw7x",
-        "hotspot_4URyYF",
         "text_span_yN46ec"
       ],
       "settings": {
