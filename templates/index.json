@@ -89,8 +89,8 @@
           "type": "text_span",
           "settings": {
             "text": "Text Span",
-            "x_axis": 50,
-            "y_axis": 50
+            "x_axis": 300,
+            "y_axis": 250
           }
         }
       },
