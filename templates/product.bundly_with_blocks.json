@@ -30,12 +30,6 @@
             "heading_tag": "h3"
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {
-            "show_taxes_notice": false
-          }
-        },
         "8feb2d1f-7bf1-4fe2-9df1-c66a10b31184": {
           "type": "shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-rating-output\/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
@@ -45,15 +39,6 @@
           "type": "set-color",
           "disabled": true,
           "settings": {
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "selector_type": "block",
-            "color_selector_type": "color",
-            "size_chart_page": ""
           }
         },
         "cc1c28f9-9759-4de3-bcdd-b6b74d5a20a3": {
@@ -157,8 +142,18 @@
             "page": ""
           }
         },
-        "6fb452ac-2cd1-4ad1-8fb5-0577990c2a21": {
-          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/product_bundles\/1cabc354-c7f9-42e9-8322-7655396b33b7",
+        "ef62f428-e808-4ab5-9e97-09a20d0ea4c2": {
+          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/bundle_price\/1cabc354-c7f9-42e9-8322-7655396b33b7",
+          "settings": {
+          }
+        },
+        "592205f3-3a2b-4d72-8137-3f4570c950b7": {
+          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/bundle_variant_picker\/1cabc354-c7f9-42e9-8322-7655396b33b7",
+          "settings": {
+          }
+        },
+        "a2f78fed-c862-4439-93f6-5e95b1d73534": {
+          "type": "shopify:\/\/apps\/bundly-mix-match-bundles\/blocks\/bundle_buy_buttons\/1cabc354-c7f9-42e9-8322-7655396b33b7",
           "settings": {
           }
         }
@@ -167,10 +162,10 @@
         "ee0d06b9-3753-4786-8cae-0f27a1c20af3",
         "56d7e56b-faf7-482f-aafa-a930459d27bd",
         "title",
-        "price",
+        "ef62f428-e808-4ab5-9e97-09a20d0ea4c2",
         "8feb2d1f-7bf1-4fe2-9df1-c66a10b31184",
         "73c767cc-401c-4ae7-87f1-99ad63408429",
-        "variant_picker",
+        "592205f3-3a2b-4d72-8137-3f4570c950b7",
         "cc1c28f9-9759-4de3-bcdd-b6b74d5a20a3",
         "description",
         "f4adc097-1575-4f9b-9c57-248ac31f7f6c",
@@ -180,7 +175,7 @@
         "abbaf8b5-b9ec-4221-94fd-526c92b8db2d",
         "6c7fb9ef-a6ef-4172-92bc-cbc0f4790210",
         "9d81e38c-cb5b-43a6-9076-6be6c50b1751",
-        "6fb452ac-2cd1-4ad1-8fb5-0577990c2a21"
+        "a2f78fed-c862-4439-93f6-5e95b1d73534"
       ],
       "custom_css": [
         ".badge--custom:nth-of-type(2) {display: none;}",
